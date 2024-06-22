@@ -46,8 +46,8 @@
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="our-link">
                     <ul>
-                        <li><a href="#"> Call US : +84967631186</a></li>
-                        <li><a href="#"><i class="fas fa-location-arrow"></i> Address: Km9, Nguyen Trai, Thanh Xuan,
+                        <li><a href="#"> Call US : 0383643820</a></li>
+                        <li><a href="#"><i class="fas fa-location-arrow"></i> Address: CMC University, To Huu Street, Van Phuc, Ha Dong,
                             Ha Noi</a></li>
                     </ul>
                 </div>
@@ -58,8 +58,11 @@
                         <option>Authentication</option>
                         <option th:if = "${session.username == null}" value = "http://localhost:8020/shop/login">Sign In </option>
                         <option th:if = "${session.username == null}" value ="http://localhost:8020/shop/register">Sign Up</option>
+
                     </select>
+
                 </div>
+
                 <div class="text-slid-box">
                     <div id="offer-box" class="carouselTicker">
                         <ul class="offer-box">
@@ -117,7 +120,6 @@
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                     <li class="nav-item"><a class="nav-link" th:href="@{/}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" th:href="@{/menu}">Menu</a></li>
-
                     <li class="dropdown">
                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Shop</a>
                         <ul class="dropdown-menu">
@@ -134,7 +136,7 @@
             <!-- Start Atribute Navigation -->
             <div class="attr-nav2">
                 <ul>
-                    <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                    <!--<li class="search"><a href="#"><i class="fa fa-search"></i></a></li>-->
                     <li class="side-menu">
                         <a href="#" th:href="@{/cart}">
                             <i class="fa fa-shopping-bag"></i>
@@ -144,6 +146,11 @@
                         </a>
                     </li>
                 </ul>
+            </div>
+            <div th:if="${session.username != null}">
+                <a class="nav-link" th:href="@{/logout}">
+                    <i class="fa fa-sign-out-alt"></i> Logout
+                </a>
             </div>
             <!-- End Atribute Navigation -->
         </div>

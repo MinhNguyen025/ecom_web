@@ -3,13 +3,19 @@ package com.ecommerce.customer.controller;
 import com.ecommerce.library.dto.CustomerDto;
 import com.ecommerce.library.model.Customer;
 import com.ecommerce.library.service.CustomerService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.security.core.Authentication;
+
 
 @Controller
 @RequiredArgsConstructor
@@ -33,6 +39,15 @@ public class LoginController {
         return "register";
     }
 
+
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request, HttpServletResponse response) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null) {
+            new SecurityContextLogoutHandler().logout(request, response, auth);
+        }
+        return "redirect:/login?logout"; // Redirect đến trang login sau khi logout
+    }
 
     @PostMapping("/do-register")
     public String registerCustomer(@Valid @ModelAttribute("customerDto") CustomerDto customerDto,
@@ -65,6 +80,7 @@ public class LoginController {
         }
         return "register";
     }
+
 
 
 }
