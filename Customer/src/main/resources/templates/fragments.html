@@ -58,7 +58,7 @@
                         <option>Authentication</option>
                         <option th:if = "${session.username == null}" value = "http://localhost:8020/shop/login">Sign In </option>
                         <option th:if = "${session.username == null}" value ="http://localhost:8020/shop/register">Sign Up</option>
-
+                        <option th:if="${session.username != null}" value="http://localhost:8020/shop/logout">Logout</option>
                     </select>
 
                 </div>
@@ -73,7 +73,7 @@
                                 <i class="fab fa-opencart"></i> Freeship
                             </li>
                             <li>
-                                <i class="fab fa-opencart"></i> 10% off Entire Purchase Promo code: OceanPrime
+                                <i class="fab fa-opencart"></i> 10% off Entire Purchase Promo code: GentleSuit
                             </li>
                             <li>
                                 <i class="fab fa-opencart"></i> Off upto 10%! Shop Now
@@ -85,7 +85,7 @@
                                 <i class="fab fa-opencart"></i> Freeship
                             </li>
                             <li>
-                                <i class="fab fa-opencart"></i> 10% off Entire Purchase Promo code: OceanPrime
+                                <i class="fab fa-opencart"></i> 10% off Entire Purchase Promo code: EmAnhTung
                             </li>
                             <li>
                                 <i class="fab fa-opencart"></i> Off 10%! Shop Now
@@ -110,7 +110,7 @@
                         aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" th:href="@{/}"><img th:src="@{/images/logo.png}" class="logo" width="130"
+                <a class="navbar-brand" th:href="@{/}"><img th:src="@{/images/logoSuit.png}" class="logo" width="80"
                                                             height="80" alt=""></a>
             </div>
             <!-- End Header Navigation -->
@@ -147,11 +147,6 @@
                     </li>
                 </ul>
             </div>
-            <div th:if="${session.username != null}">
-                <a class="nav-link" th:href="@{/logout}">
-                    <i class="fa fa-sign-out-alt"></i> Logout
-                </a>
-            </div>
             <!-- End Atribute Navigation -->
         </div>
     </nav>
@@ -178,7 +173,7 @@
             <div class="col-lg-12">
                 <h2 th:text="${page}"></h2>
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="home.html">Ocean Prime</a></li>
+                    <li class="breadcrumb-item"><a href="home.html">Gentle Suit</a></li>
                     <li class="breadcrumb-item active" th:text="${page}"></li>
                 </ul>
             </div>
@@ -192,41 +187,41 @@
     <div class="main-instagram owl-carousel owl-theme">
         <div class="item">
             <div class="ins-inner-box">
-                <a href="index.html"><img th:src="@{/images/Fish 01 - Fish Tacos.jpg}" alt=""/></a>
+                <a href="index.html"><img th:src="@{/images/suit1.jpg}" alt=""/></a>
 
             </div>
         </div>
         <div class="item">
             <div class="ins-inner-box">
-                <img th:src="@{/images/instagram-img-02.jpg}" alt=""/>
+                <img th:src="@{/images/suit2.jpg}" alt=""/>
             </div>
         </div>
         <div class="item">
             <div class="ins-inner-box">
-                <a href="index.html"><img th:src="@{/images/Fish 04 - Red Pepper & Parmesan Tilapia.jpg}" alt=""/></a>
+                <a href="index.html"><img th:src="@{/images/suit3.jpg}" alt=""/></a>
             </div>
         </div>
         <div class="item">
             <div class="ins-inner-box">
-                <a href="index.html"><img th:src="@{/images/Fish 05 - Almond-Topped Fish.jpg}" alt=""/></a>
+                <a href="index.html"><img th:src="@{/images/suit4.jpg}" alt=""/></a>
             </div>
         </div>
         <div class="item">
             <div class="ins-inner-box">
-                <a href="index.html"><img th:src="@{/images/Shrimp 03 - Shrimp Tostadas with Avocado Salsa.jpg}"
+                <a href="index.html"><img th:src="@{/images/suit5.jpg}"
                                           alt=""/></a>
             </div>
         </div>
         <div class="item">
             <div class="ins-inner-box">
-                <a href="index.html"><img th:src="@{/images/Shrimp 08 - Grilled Shrimp and Chorizo Appetizers.jpg}"
+                <a href="index.html"><img th:src="@{/images/suit6.jpg}"
                                           alt=""/></a>
             </div>
         </div>
         <div class="item">
             <div class="ins-inner-box">
                 <a href="index.html"><img
-                        th:src="@{/images/Octopus 06 - Red Wine–Braised Baby Octopus with Black Olives.jpg}"
+                        th:src="@{/images/suit7.jpg}"
                         alt=""/></a>
             </div>
         </div>
@@ -253,16 +248,17 @@
                     <div class="footer-top-box">
                         <h3>Contact Us</h3>
                         <ul class="list-time">
-                            <li><i class="fas fa-phone-square"></i> Phone number: +84967631186</li>
-                            <li><i class="fas fa-envelope"></i> Email: abc@gmail.com</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Address: Km9, Nguyen Trai, Thanh Xuan</li>
+                            <li><i class="fas fa-phone-square"></i> Phone number: 0383643820</li>
+                            <li><i class="fas fa-envelope"></i> Email: nguyenduyminh0205@gmail.com</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Address: CMC University, To Huu Street, Van Phuc, Ha Dong,
+                                Ha Noi</li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="footer-top-box">
                         <h3>Social Media</h3>
-                        <p>Come with Ocean Prime shop - Only Fresh </p>
+                        <p>Come with us - Become a gentleman </p>
                         <ul>
                             <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
                             <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
